@@ -6,9 +6,9 @@ app.config(['$routeProvider',
       when('/', {
         templateUrl: 'partials/',
         controller: 'PinCtrl'
-      }).when('/songs/', {
-        templateUrl: 'partials/',
-        controller: 'SongListCtrl'
+      // }).when('/pins/', {
+      //   templateUrl: 'partials/',
+      //   controller: ''
       }).
       otherwise({
         redirectTo: '/'
