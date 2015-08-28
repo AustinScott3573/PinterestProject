@@ -1,5 +1,5 @@
 <div class="pins" ng-repeat="key in pins | filter: search">
-  <img class="pinsImage" src="{{key.image}}">
+  <img class="pinsImage" ng-src="{{key.image}}">
   <h4 class="pinsTitle">{{key.text.title}}</h4>
   <p class="pinsDescription">{{key.text.description}}</p>
 </div>
