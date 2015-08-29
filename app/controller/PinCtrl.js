@@ -17,7 +17,8 @@ app.controller("PinCtrl",
     //   console.log($scope.authData = authData);
     // });
 
-    angular.element('#find').on("click", function(){
+    angular.element('#find').on("click", function(e){
+      e.preventDefault();
       var input = $scope.pinSearch;
       var allPinsArr = angular.element(".pins");
 
@@ -25,8 +26,9 @@ app.controller("PinCtrl",
         //loop to only check up to the length of input
         for(var i=0; i<input.length; i++){
           if(input.charAt(i)!==value.id.charAt(i)){
-            //hide element from dom
+            // hide element from dom
             value.remove();
+            // angular.element(value).css("display: ", "none");
             break;
           }
         }
