@@ -1,5 +1,6 @@
 <div id="{{key.text.title}}" class="pins" ng-repeat="key in pins | filter: pinSearch">
-  <button class="pinit"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
+  <!-- button toggles modal on click -->
+  <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
   <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
   <h4 class="pinsTitle">{{key.text.title}}</h4>
   <p class="pinsDescription">{{key.text.description}}</p>
