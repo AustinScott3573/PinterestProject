@@ -3,8 +3,9 @@ app.controller("PinCtrl",
    "$routeParams",
    "$firebaseArray",
   function($scope,  $routeParams, $firebaseArray) {
+    $scope.pinSearch="";
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
-       
+    
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
 
@@ -15,5 +16,21 @@ app.controller("PinCtrl",
     //   $scope.authData = authData;
     //   console.log($scope.authData = authData);
     // });
-}
+
+    angular.element('#find').on("click", function(){
+      var input = $scope.pinSearch;
+      var allPinsArr = angular.element(".pins");
+
+      angular.forEach(allPinsArr, function(value, key) {
+        //loop to only check up to the length of input
+        for(var i=0; i<input.length; i++){
+          if(input.charAt(i)!==value.id.charAt(i)){
+            //hide element from dom
+            value.remove();
+            break;
+          }
+        }
+      });
+    });
+  }
 ]);
