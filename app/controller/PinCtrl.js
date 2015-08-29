@@ -21,7 +21,7 @@ app.controller("PinCtrl",
       e.preventDefault();
       var input = $scope.pinSearch;
       var allPinsArr = angular.element(".pins");
-
+      //loop to sift through all pins filter
       angular.forEach(allPinsArr, function(value, key) {
         //loop to only check up to the length of input
         for(var i=0; i<input.length; i++){
@@ -32,6 +32,19 @@ app.controller("PinCtrl",
             break;
           }
         }
+      });
+    });
+
+
+    angular.element(document).on("click", ".pinit", function(){
+      var id = angular.element(this).parent()[0].id;
+      console.log(id);
+      console.log($scope.pins);
+
+      angular.forEach($scope.pins, function(value, key) {
+        if(value.text.title===id){
+          //push value to the local pins array
+        }        
       });
     });
   }
