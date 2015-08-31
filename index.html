@@ -74,7 +74,7 @@
         <input type="text" id="commentInput" class="form-control" placeholder="add a comment"></input>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Pin</button>
+        <button type="button" id="savePinButton" class="btn btn-default" data-dismiss="modal">Pin</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -90,6 +90,8 @@
       <button class="btn btn-info btn-xs" ng-click="auth.$authWithOAuthPopup('facebook')">Login With Facebook</button>
     </div> -->
 
+
+
 <script src="lib/bower_components/jquery/dist/jquery.js"></script>
 <script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="lib/bower_components/angular/angular.js"></script>
@@ -97,8 +99,10 @@
 <script src="lib/bower_components/firebase/firebase.js"></script>
 <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="app/app.js"></script>
-  <script src="app/controller/PinCtrl.js"></script>
-  <script src="app/controller/LogCtrl.js"></script>
-  <script src="app/controller/SignUpCtrl.js"></script>
+<script src="app/controller/PinCtrl.js"></script>
+<script src="app/controller/CreatePinCtrl.js"></script>
+<script src="app/controller/LogCtrl.js"></script>
+<script src="app/controller/SignUpCtrl.js"></script>
+<script src="app/factories/storage.js"></script>
 </body>
 </html>

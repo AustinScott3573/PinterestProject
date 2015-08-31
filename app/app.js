@@ -14,11 +14,16 @@ app.config(['$routeProvider',
       .when('/pins', {
         templateUrl: 'partials/pinDiv.html',
         controller: 'PinCtrl'
-      })
-      
+      }).
+      when('/createpin', {
+        templateUrl: 'partials/create-pin.html',
+        controller: 'CreatePinCtrl'
+      }).
       // .when('/photo/:id', {
       //   templateUrl: 'partials/detail.html',
       //   controller: 'DetailCtrl'
       // })
-      .otherwise('/');
+      otherwise({
+        redirectTo: '/'
+      });
   }]);
