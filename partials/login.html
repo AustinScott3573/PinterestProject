@@ -1,5 +1,5 @@
 <div class="container">
-
+  
   <div ng-hide="authData">
     <div class="jumbotron">
       <h2> PinApple </h2>
@@ -7,6 +7,16 @@
         <a href="#/pins" class="btn btn-lg btn-primary" ng-click="auth.$authWithOAuthPopup('facebook')"> Facebook</a>
         <a href="#/pins" class="btn btn-lg btn-warning" ng-click="auth.$authWithOAuthPopup('github')"> Github</a>
         <a href="#/pins" class="btn btn-lg btn-info" ng-click="auth.$authWithOAuthPopup('twitter')"> Twitter</a>
+        <section> 
+        </br>
+          <p>- or -</p>
+          <input ng-model="user.email" class="form-control" type="email" placeholder="Email">
+          </br>
+          <input ng-model="user.password"  class="form-control" type="password" placeholder="Password">
+          </br>
+          <a class="btn btn-md btn-default"> Login </a>
+          <a href="#/signup" class="btn btn-md btn-success"> Sign Up </a>
+        </section>  
     </div>
   </div>
 

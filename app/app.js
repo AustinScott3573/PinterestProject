@@ -7,14 +7,15 @@ app.config(['$routeProvider',
         templateUrl: 'partials/login.html',
         controller: 'LogCtrl'
       })
+      .when('/signup', {
+        templateUrl: 'partials/signup.html',
+        controller: 'SignUpCtrl'
+      })
       .when('/pins', {
         templateUrl: 'partials/pinDiv.html',
         controller: 'PinCtrl'
       })
-      // .when('/signup', {
-      //   templateUrl: 'partials/signup.html',
-      //   controller: 'SignupCtrl'
-      // })
+      
       // .when('/photo/:id', {
       //   templateUrl: 'partials/detail.html',
       //   controller: 'DetailCtrl'
