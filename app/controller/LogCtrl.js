@@ -5,7 +5,11 @@ app.controller("LogCtrl",
   "$firebaseArray",
   function($scope, $routeParams, $firebaseAuth, $firebaseArray) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
-
+    $scope.user = {
+      "email": "",
+      "password": ""
+    };
+       
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
 
@@ -20,21 +24,18 @@ app.controller("LogCtrl",
       $scope.authData = authData;
       console.log($scope.authData = authData);
     });
+    
+    $scope.login = function() {
 
-    // function login() {
-    // }
-     
-      ref.authWithPassword({
-        email    : "",
-        password : ""
-      }, function(error, authData) {
-        console.log("LogCtrl", authData);
-        if (error) {
-          console.log("Login Failed!", error);
-        } else {
-          console.log("Authenticated successfully with payload:", authData);
-        }
-      });
+      ref.authWithPassword($scope.user, function(error, authData) {
+          console.log("LogCtrl", authData);
+          if (error) {
+            console.log("Login Failed!", error);
+          } else {
+            console.log("Authenticated successfully with payload:", authData);
+          }
+        });
+    };
 
   }
 ]);
