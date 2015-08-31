@@ -27,8 +27,8 @@ app.controller("CreatePinCtrl", ["$scope", "$q", "$firebaseArray", "$location", 
         "title": "",
         "description": ""
       }
-    }
-    $location.url('/');
+    };
+    $location.url('/pins');
   };
 
   $scope.closeAddPin = function() {
@@ -41,7 +41,7 @@ app.controller("CreatePinCtrl", ["$scope", "$q", "$firebaseArray", "$location", 
         "description": ""
       }
     };
-    $location.url('/');
+    $location.url('/pins');
   };
 }
 ]);
