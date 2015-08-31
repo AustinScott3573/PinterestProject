@@ -41,11 +41,14 @@ app.controller("PinCtrl",
       newPin.text.title = title;
       //sets the uid of newPin to the userId stored in the factory
       newPin.uid = storage.getUserId();
-      
+
       console.log(text, title);
       console.log(newPin);
 
-      
+      // $scope.pins.push(newPin);
+      $scope.pins.$add(newPin);
+      newPin = {};
+      console.log($scope.pins);
     });
 
   }
