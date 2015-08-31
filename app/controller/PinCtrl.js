@@ -2,7 +2,8 @@ app.controller("PinCtrl",
   ["$scope",
    "$routeParams",
    "$firebaseArray",
-  function($scope,  $routeParams, $firebaseArray) {
+   "$location",
+  function($scope,  $routeParams, $firebaseArray, $location) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
        
     // Data from firebase 
@@ -15,5 +16,19 @@ app.controller("PinCtrl",
     //   $scope.authData = authData;
     //   console.log($scope.authData = authData);
     // });
+    $(document).ready(function(){
+      $('#createPins').tooltip({
+        placement : 'left',
+        trigger : 'click',
+        html : 'true',
+        title: 'my tooltip',
+        template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner">Upload from website<br>Create own</div></div>'
+    });
+  });
+  $scope.createPin = function() {
+    // $location.url('/createpin');
+    // $("#createPin").tooltip(); 
+
+  };
 }
 ]);

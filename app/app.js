@@ -10,6 +10,10 @@ app.config(['$routeProvider',
       //   templateUrl: 'partials/',
       //   controller: ''
       }).
+      when('/createpin', {
+        templateUrl: 'partials/create-pin.html',
+        controller: 'CreatePinCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

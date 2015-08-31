@@ -41,14 +41,15 @@
         <div class="col-md-1 col-lg-2"><!-- spacer sidebar -->
       </div>
       <div class="col-sm-12 col-md-10 col-lg-8">
-      </div>
       <div id='pin-list'><!-- Pin-list will go here -->
         <div ng-view></div>
-    </div>
+      </div>
+      </div>
+      
   
   </div>
   <div class="col-md-1 col-lg-2"><!-- spacer sidebar -->
-</div>
+  </div>
 
 
     <!-- <div ng-hide="authData">
@@ -57,11 +58,13 @@
     </div> -->
 
 <script src="lib/bower_components/jquery/dist/jquery.js"></script>
+<script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="lib/bower_components/angular/angular.js"></script>
 <script src="lib/bower_components/angular-route/angular-route.js"></script>
 <script src="lib/bower_components/firebase/firebase.js"></script>
 <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controller/PinCtrl.js"></script>
+<script src="app/controller/CreatePinCtrl.js"></script>
 </body>
 </html>
