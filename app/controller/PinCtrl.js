@@ -33,11 +33,17 @@ app.controller("PinCtrl",
 
 
     angular.element("#savePinButton").on("click", function(){
+      //retrieves the inputs for the 2 text fields
       var text = angular.element("#commentInput").val();
       var title = angular.element("#titleInput").val();
+      //sets the newPin to the values of the text fields
+      newPin.text.description = text;
+      newPin.text.title = title;
+      //sets the uid of newPin to the userId stored in the factory
+      newPin.uid = storage.getUserId();
+      
       console.log(text, title);
       console.log(newPin);
-      console.log(storage.getUserId());
 
       
     });
