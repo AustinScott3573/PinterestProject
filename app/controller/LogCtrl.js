@@ -20,13 +20,14 @@ app.controller("LogCtrl",
     $scope.auth = $firebaseAuth(ref);
 
     console.log("$scope.auth", $scope.auth);
-
+    
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
+
       //changes the profile picture based on how user is logged in
-      
       if(authData!==null){
+
       //sets the user id in a factory for other controllers to use
       storage.setUserId(authData.uid);
         switch (authData.provider) {
@@ -59,11 +60,12 @@ app.controller("LogCtrl",
     $scope.login = function() {
 
       ref.authWithPassword($scope.user, function(error, authData) {
-          console.log("LogCtrl", authData);
+          console.log("LogCtrl", authData.uid);
           if (error) {
             $location.path('#/');
             console.log("Login Failed!", error);
           } else {
+            storage.setUserId(authData.uid);
             console.log("Authenticated successfully with payload:", authData);
           }
         });

@@ -1,5 +1,5 @@
 app.factory("storage", function() {
-  var userId = "";
+  var userId = null;
 
   return {
     getUserId: function() {

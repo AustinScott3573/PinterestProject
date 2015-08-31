@@ -1,9 +1,10 @@
-app.controller("UserCtrl", [ "$scope", "$firebaseArray", "uidID", function($scope, $firebaseArray, uidID) {
+app.controller("UserCtrl", [ "$scope", "$firebaseArray", "storage", function($scope, $firebaseArray, storage) {
 
   var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
 
-  $scope.uid = uidID.getUid();
-  $scope.boards = $firebaseArray(ref);
+  $scope.pins = $firebaseArray(ref);
+  
+  $scope.uid = storage.getUserId();
 
-  console.log(uidID.getUid());
+  console.log(storage.getUserId());
 }]);
