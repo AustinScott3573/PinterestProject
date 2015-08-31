@@ -9,6 +9,8 @@ app.controller("LogCtrl",
       "email": "",
       "password": ""
     };
+
+    $scope.currentPicURL = "";
        
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
@@ -21,6 +23,11 @@ app.controller("LogCtrl",
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
+      if(authData!==null){
+        $scope.currentPicURL = authData.password.profileImageURL;
+      }else{
+        $scope.currentPicURL = "";
+      }
       $scope.authData = authData;
       console.log($scope.authData = authData);
     });
