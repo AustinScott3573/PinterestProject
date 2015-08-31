@@ -1,11 +1,11 @@
-
 <div class="row container">
   <div class="col-md-1 col-lg-2"><!-- spacer sidebar -->
   </div>
   <div class="col-sm-12 col-md-10 col-lg-8">
   </div>
   <div id='pin-list'> <!-- Pin-list will go here -->
-    <div ng-show="authData" class="pins" ng-repeat="key in pins | filter: search">
+    <div ng-show="authData" id="{{key.text.title}}" class="pins" ng-repeat="key in pins | filter: search">
+      <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
       <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
       <h4 class="pinsTitle">{{key.text.title}}</h4>
       <p class="pinsDescription">{{key.text.description}}</p>
@@ -15,4 +15,3 @@
 </div>
 <div class="col-md-1 col-lg-2"><!-- spacer sidebar -->
 </div>
-
