@@ -48,12 +48,6 @@ h5 {
   margin: 0 !important;
   padding: 0 !important; }
 
-body {
-  font-family: "Josefin Sans", sans-serif;
-  background: #333 url(../images/film-bg.jpg) no-repeat top left fixed;
-  background-size: cover;
-  margin: 0; }
-
 nav {
   box-shadow: 0 5px 8px rgba(30, 30, 30, 0.8); }
 

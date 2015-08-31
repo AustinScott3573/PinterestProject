@@ -8,5 +8,5 @@ app.factory("storage", function() {
     setUserId: function(id) {
       userId = id;
     }
-  }
+  };
 });

@@ -20,12 +20,12 @@ $font-stack:  'Josefin Sans', sans-serif;
 }
 
 
-body {
-  font-family: $font-stack;
-  background: #333 url(../images/film-bg.jpg) no-repeat top left fixed;
-  background-size: cover;
-  margin: 0;
-}
+// body {
+//   font-family: $font-stack;
+//   background: #333 url(images/film-bg.jpg) no-repeat top left fixed;
+//   background-size: cover;
+//   margin: 0;
+// }
 
 nav {
   box-shadow: 0 5px 8px rgba(30,30,30,0.8);
