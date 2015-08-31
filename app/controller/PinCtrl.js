@@ -4,7 +4,7 @@ app.controller("PinCtrl",
    "$firebaseArray",
   function($scope,  $routeParams, $firebaseArray) {
    var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
-   
+   var newPin = {};
    // Data from firebase 
     $scope.pins = $firebaseArray(ref);
 
@@ -14,13 +14,14 @@ app.controller("PinCtrl",
       var id = angular.element(this).parent()[0].id;
       console.log(id);
       console.log($scope.pins);
-      var pin = {};
 
       angular.forEach($scope.pins, function(value, key) {
         if(value.text.title===id){
           //save the matching value to pin
-          pin = value;
+          newPin = value;
         }
+
+
 
         //on another button click (final pin button in the modal)
           //take the text input from modal
@@ -28,5 +29,16 @@ app.controller("PinCtrl",
           //then push the new pin object to the user's array
       });
     });
+
+
+    angular.element("#savePinButton").on("click", function(){
+      var text = angular.element("#commentInput").val();
+      var title = angular.element("#titleInput").val();
+      console.log(text, title);
+      console.log(newPin);
+
+      
+    });
+
   }
 ]);
