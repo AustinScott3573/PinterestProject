@@ -9,6 +9,8 @@ app.controller("LogCtrl",
       "email": "",
       "password": ""
     };
+
+    $scope.currentPicUrl = "";
        
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
