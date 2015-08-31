@@ -1,7 +1,111 @@
-.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
+nav {
+  width: 100%;
+  height: 10%;
+  min-height: 50px; }
+
+h5 {
+  float: center; }
+
+.augment-nav {
+  background-color: #8DADB8 !important; }
+  .augment-nav button {
+    position: center;
+    font-size: 1.25em;
+    margin-bottom: 15px; }
+  .augment-nav button:hover {
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #669999;
+    background-color: white; }
+
+.btn-xs {
+  position: absolute;
+  bottom: 0;
+  left: 65px; }
+
+#profileImage {
+  position: absolute;
+  z-index: 75;
+  left: 0;
+  top: 0;
+  max-width: 48px;
+  max-height: 48px; }
+
+.loginStyling {
+  margin-left: 50px; }
+
+.fixed-position {
+  position: fixed;
+  width: 100% !important;
+  z-index: 99; }
+
+.row, header, nav, .container-fluid {
+  margin: 0 !important;
+  padding: 0 !important; }
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background: #333 url(../images/film-bg.jpg) no-repeat top left fixed;
+  background-size: cover;
+  margin: 0; }
+
+nav {
+  box-shadow: 0 5px 8px rgba(30, 30, 30, 0.8); }
+
+#movie-list {
+  padding-top: 55px; }
+
+.pin-list {
+  background-color: rgba(50, 50, 50, 0.7);
+  box-shadow: 5px 5px 8px rgba(30, 30, 30, 0.8), inset 3px 3px 5px rgba(170, 170, 170, 0.5), inset -3px -3px 5px rgba(30, 30, 30, 0.8);
+  width: 170px;
+  height: 300px;
+  float: right;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white; }
+  .pin-list h4 {
+    margin: 0;
+    padding-top: 50px; }
+
+.poster {
+  position: relative;
+  text-align: center;
+  display: block;
+  height: 245px; }
+  .poster img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 240px; }
+
+#find-results span {
+  margin-left: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  vertical-align: center; }
+
+.hidden {
+  display: none; }
+
+.delete-btn {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  border: none;
+  margin: 0;
+  padding: 5px;
+  color: red;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 0 5px; }
+  .delete-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: red; }
+  .delete-btn span {
+    font-size: 2em;
+    margin: 0;
+    padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
