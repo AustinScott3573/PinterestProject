@@ -25,6 +25,7 @@ app.controller("LogCtrl",
       console.log($scope.authData = authData);
     });
     
+    // Authorizes user by email/password
     $scope.login = function() {
 
       ref.authWithPassword($scope.user, function(error, authData) {

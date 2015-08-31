@@ -4,11 +4,14 @@ app.controller("SignUpCtrl",
   "$firebaseObject",
   function($scope, $routeParams, $firebaseObject) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins/uid");
+
+    // Grabs user input from DOM
     $scope.user = {
       "email": "",
       "password": ""
     };
 
+    // Adds new user to firebase authentication via email/password
     $scope.createUser = function() {
 
       ref.createUser($scope.user, function(error, userData) {
