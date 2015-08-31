@@ -24,9 +24,6 @@ app.controller("PinCtrl",
         content: '<a href="#" class="btn btn-block btn-sm btn-default"><span class="glyphicon glyphicon-arrow-up"></span> Upload a pin</a><a data-toggle="modal" id="pinFromWebsite" data-target="#addPinFromWebsite" class="btn btn-block btn-sm btn-default"><span class="glyphicon glyphicon-globe"></span> Pin from website</a>'
       });
 
-      $scope.pinFromWebsite = function() {
-        $('#createPins').popover('hide');
-   }
   });
 
 

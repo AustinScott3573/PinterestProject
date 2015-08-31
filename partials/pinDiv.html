@@ -1,4 +1,6 @@
-<a role="button" id="createPins" class="close" data-toggle="popover"><span class="glyphicon glyphicon-plus"></span></a>
+<a tabindex="0" role="button" id="createPins" class="close" data-toggle="popover" trigger="focus">
+  <span class="glyphicon glyphicon-plus"></span>
+</a>
 
 <div class="pins" ng-repeat="key in pins | filter: search">
   <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
