@@ -24,7 +24,22 @@ app.controller("LogCtrl",
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
       if(authData!==null){
-        $scope.currentPicURL = authData.password.profileImageURL;
+        switch (authData.provider) {
+          case "facebook":
+            $scope.currentPicURL = authData.facebook.profileImageURL;
+            break;
+          case "twitter":
+            $scope.currentPicURL = authData.twitter.profileImageURL;
+            break;
+          case "password":
+            $scope.currentPicURL = authData.password.profileImageURL;
+            break;
+          case "github":
+            $scope.currentPicURL = authData.github.profileImageURL;
+            break;
+          default:
+            $scope.currentPicURL = "";
+        }
       }else{
         $scope.currentPicURL = "";
       }
