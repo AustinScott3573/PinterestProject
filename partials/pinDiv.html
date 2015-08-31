@@ -1,5 +1,18 @@
-<div class="pins" ng-repeat="key in pins | filter: search">
-  <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
-  <h4 class="pinsTitle">{{key.text.title}}</h4>
-  <p class="pinsDescription">{{key.text.description}}</p>
+
+<div class="row container">
+  <div class="col-md-1 col-lg-2"><!-- spacer sidebar -->
+  </div>
+  <div class="col-sm-12 col-md-10 col-lg-8">
+  </div>
+  <div id='pin-list'> <!-- Pin-list will go here -->
+    <div ng-show="authData" class="pins" ng-repeat="key in pins | filter: search">
+      <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
+      <h4 class="pinsTitle">{{key.text.title}}</h4>
+      <p class="pinsDescription">{{key.text.description}}</p>
+    </div>
+  </div>
+
 </div>
+<div class="col-md-1 col-lg-2"><!-- spacer sidebar -->
+</div>
+

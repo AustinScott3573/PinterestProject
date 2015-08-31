@@ -3,17 +3,12 @@ app.controller("PinCtrl",
    "$routeParams",
    "$firebaseArray",
   function($scope,  $routeParams, $firebaseArray) {
-    var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
-       
-    // Data from firebase 
+   var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
+   
+   // Data from firebase 
     $scope.pins = $firebaseArray(ref);
 
-    // $scope.auth = Auth;
+   console.log("PinCtrl", $scope.pins);
 
-    // // Any time auth status updates, add the user data to scope
-    // $scope.auth.$onAuth(function(authData) {
-    //   $scope.authData = authData;
-    //   console.log($scope.authData = authData);
-    // });
-}
+  }
 ]);
