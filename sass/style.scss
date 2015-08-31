@@ -32,11 +32,6 @@ nav {
 }
 
 
-#movie-list {
-  padding-top: 55px;
-}
-
-
 .pin-list {
   background-color: rgba(50,50,50,0.7);
   box-shadow: 5px 5px 8px rgba(30,30,30,0.8),
@@ -62,18 +57,20 @@ nav {
 //   margin: 0 auto;
 // }
 
-.poster {
+
+
+#pinWrapper {
   position: relative;
-  text-align: center;
-  display: block;
-  height: 245px;
-  img {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-height: 240px;
+  border: 2px solid black;
+  .pinsimage {
+    max-width: 15%;
+    max-height:25%;
   }
+}
+
+#pinPositioner {
+  border: 2px solid black;
+  margin-top: 55px;
 }
 
 #find-results span {
@@ -87,20 +84,18 @@ nav {
   display: none;
 }
 
-.delete-btn {
+.pinit {
   position: absolute;
   z-index: 50;
   top: 0;
-  right: 0;
+  left: 0;
   border: none;
   margin: 0;
   padding: 5px;
-  color: red;
   background-color: rgba(0,0,0,0.5);
   border-radius: 0 0 0 5px;
-  &:hover {
-    background-color: rgba(0,0,0,0.9);
-    color: red;
+  .pinit:hover {
+    display: show;
   }
   span {
     font-size: 2em;
