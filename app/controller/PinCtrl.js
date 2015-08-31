@@ -3,7 +3,7 @@ app.controller("PinCtrl",
    "$routeParams",
    "$firebaseArray",
    "$location",
-   "storage"
+   "storage",
   function($scope,  $routeParams, $firebaseArray, $location, storage) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");   
     // Data from firebase 
