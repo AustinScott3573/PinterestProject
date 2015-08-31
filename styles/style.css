@@ -4,4 +4,101 @@
   display: -ms-flexbox;
   display: flex; }
 
+nav {
+  width: 100%;
+  height: 10%;
+  min-height: 50px; }
+
+h5 {
+  float: center; }
+
+.augment-nav {
+  background-color: #8DADB8 !important; }
+  .augment-nav button {
+    position: center;
+    font-size: 1.25em;
+    margin-bottom: 15px; }
+  .augment-nav button:hover {
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #669999;
+    background-color: white; }
+
+.btn-xs {
+  position: absolute;
+  bottom: 0;
+  left: 65px; }
+
+#profileImage {
+  position: absolute;
+  z-index: 75;
+  left: 0;
+  top: 0;
+  max-width: 48px;
+  max-height: 48px; }
+
+.loginStyling {
+  margin-left: 50px; }
+
+.fixed-position {
+  position: fixed;
+  width: 100% !important;
+  z-index: 99; }
+
+.row, header, nav, .container-fluid {
+  margin: 0 !important;
+  padding: 0 !important; }
+
+nav {
+  box-shadow: 0 5px 8px rgba(30, 30, 30, 0.8); }
+
+.pin-list {
+  background-color: rgba(50, 50, 50, 0.7);
+  box-shadow: 5px 5px 8px rgba(30, 30, 30, 0.8), inset 3px 3px 5px rgba(170, 170, 170, 0.5), inset -3px -3px 5px rgba(30, 30, 30, 0.8);
+  width: 170px;
+  height: 300px;
+  float: right;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  color: white; }
+  .pin-list h4 {
+    margin: 0;
+    padding-top: 50px; }
+
+#pinWrapper {
+  position: relative;
+  border: 2px solid black; }
+  #pinWrapper .pinsimage {
+    max-width: 15%;
+    max-height: 25%; }
+
+#pinPositioner {
+  margin-top: 55px; }
+
+#find-results span {
+  margin-left: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  vertical-align: center; }
+
+.hidden {
+  display: none; }
+
+.pinit {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  border: none;
+  margin: 0;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 0 5px; }
+  .pinit .pinit:hover {
+    display: show; }
+  .pinit span {
+    font-size: 2em;
+    margin: 0;
+    padding: 0; }
+
 /*# sourceMappingURL=style.css.map */

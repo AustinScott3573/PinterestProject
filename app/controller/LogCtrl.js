@@ -4,7 +4,8 @@ app.controller("LogCtrl",
    "$routeParams",
    "$firebaseAuth",
   "$firebaseArray",
-  function($scope, $location, $routeParams, $firebaseAuth, $firebaseArray) {
+  "storage",
+  function($scope, $location, $routeParams, $firebaseAuth, $firebaseArray, storage) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
     $scope.user = {
       "email": "",
@@ -23,7 +24,11 @@ app.controller("LogCtrl",
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
+      //changes the profile picture based on how user is logged in
+      
       if(authData!==null){
+      //sets the user id in a factory for other controllers to use
+      storage.setUserId(authData.uid);
         switch (authData.provider) {
           case "facebook":
             $scope.currentPicURL = authData.facebook.profileImageURL;
