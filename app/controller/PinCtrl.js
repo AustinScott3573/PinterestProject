@@ -2,7 +2,8 @@ app.controller("PinCtrl",
   ["$scope",
    "$routeParams",
    "$firebaseArray",
-  function($scope,  $routeParams, $firebaseArray) {
+   "storage",
+  function($scope,  $routeParams, $firebaseArray, storage) {
    var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");
    var newPin = {};
    // Data from firebase 
@@ -36,6 +37,7 @@ app.controller("PinCtrl",
       var title = angular.element("#titleInput").val();
       console.log(text, title);
       console.log(newPin);
+      console.log(storage.getUserId());
 
       
     });
