@@ -14,6 +14,10 @@ app.config(['$routeProvider',
       .when('/pins', {
         templateUrl: 'partials/pinDiv.html',
         controller: 'PinCtrl'
+      })
+      .when('/user', {
+        templateUrl: 'partials/user.html',
+        controller: 'UserCtrl'
       }).
       when('/createpin', {
         templateUrl: 'partials/create-pin.html',
