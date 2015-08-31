@@ -1,5 +1,5 @@
-<button type="button" id="createPins" class="close" data-toggle="popover"><span class="glyphicon glyphicon-plus"></span></button>
-<a href="#/createpin">Create new pin</a>
+<a role="button" id="createPins" class="close" data-toggle="popover"><span class="glyphicon glyphicon-plus"></span></a>
+
 <div class="pins" ng-repeat="key in pins | filter: search">
   <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
   <h4 class="pinsTitle">{{key.text.title}}</h4></a>

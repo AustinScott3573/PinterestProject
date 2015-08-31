@@ -17,14 +17,19 @@ app.controller("PinCtrl",
     //   console.log($scope.authData = authData);
     // });
     $(document).ready(function(){
-      $('#createPins').tooltip({
+      $('#createPins').popover({
         placement : 'left',
         trigger : 'click',
-        html : 'true',
-        title: 'my tooltip',
-        template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner">Upload from website<br>Create own</div></div>'
-    });
+        html: true,
+        content: '<a href="#" class="btn btn-block btn-sm btn-default"><span class="glyphicon glyphicon-arrow-up"></span> Upload a pin</a><a data-toggle="modal" id="pinFromWebsite" data-target="#addPinFromWebsite" class="btn btn-block btn-sm btn-default"><span class="glyphicon glyphicon-globe"></span> Pin from website</a>'
+      });
+
+      $scope.pinFromWebsite = function() {
+        $('#createPins').popover('hide');
+   }
   });
+
+
   $scope.createPin = function() {
     // $location.url('/createpin');
     // $("#createPin").tooltip(); 
