@@ -66,7 +66,6 @@ nav {
     padding-top: 50px; }
 
 #pinWrapper {
-  position: relative;
   border: 2px solid black; }
   #pinWrapper .pinsimage {
     max-width: 15%;
