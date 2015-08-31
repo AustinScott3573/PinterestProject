@@ -5,11 +5,12 @@ app.controller("PinCtrl",
    "$location",
    "storage",
   function($scope,  $routeParams, $firebaseArray, $location, storage) {
-    var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins");   
+    var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins"); 
+    var newPin = {};  
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
     angular.element(document).on("click", ".pinit", function(){
-      var id = angular.element(this).parent()[0].id;
+      var id = angular.element(this).parent().parent()[0].id;
       console.log(id);
       console.log($scope.pins);
 
@@ -17,6 +18,7 @@ app.controller("PinCtrl",
         if(value.text.title===id){
           //save the matching value to pin
           newPin = value;
+          console.log(newPin);
         }
         //on another button click (final pin button in the modal)
           //take the text input from modal
