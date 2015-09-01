@@ -9,9 +9,6 @@ nav {
   height: 10%;
   min-height: 50px; }
 
-h5 {
-  float: center; }
-
 .augment-nav {
   background-color: #8DADB8 !important; }
   .augment-nav button {
@@ -48,6 +45,12 @@ h5 {
   margin: 0 !important;
   padding: 0 !important; }
 
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #BEBEBE;
+  background-size: cover;
+  margin: 0; }
+
 nav {
   box-shadow: 0 5px 8px rgba(30, 30, 30, 0.8); }
 
@@ -57,29 +60,30 @@ nav {
   width: 170px;
   height: 300px;
   float: right;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px;
   color: white; }
-  .pin-list h4 {
-    margin: 0;
-    padding-top: 50px; }
+
+h4, p {
+  margin: 10px; }
+
+h4 {
+  border-bottom: 2px solid #BEBEBE; }
 
 #pinWrapper {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #D3D3D3;
+  border-radius: 10px;
   position: relative;
-  border: 2px solid black; }
+  max-width: 100%; }
   #pinWrapper .pinsimage {
-    max-width: 15%;
-    max-height: 25%; }
+    max-width: 100%;
+    height: 50%;
+    border-radius: 10px; }
 
 #pinPositioner {
-  margin-top: 55px; }
-
-#find-results span {
-  margin-left: 20px;
-  font-size: 1.5em;
-  font-weight: bold;
-  vertical-align: center; }
+  margin-top: 60px; }
 
 .hidden {
   display: none; }
@@ -91,14 +95,20 @@ nav {
   left: 0;
   border: none;
   margin: 0;
-  padding: 5px;
+  padding: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 0 5px; }
+  border-radius: 50px; }
   .pinit .pinit:hover {
     display: show; }
   .pinit span {
     font-size: 2em;
     margin: 0;
     padding: 0; }
+
+.glyphicon-plus {
+  background-color: #ffffff;
+  border-radius: 100px;
+  left: 100px;
+  padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */

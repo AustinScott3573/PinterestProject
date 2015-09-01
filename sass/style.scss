@@ -8,6 +8,7 @@
 
 $font-stack:  'Josefin Sans', sans-serif;
 
+
 .fixed-position {
   position: fixed;
   width: 100% !important;
@@ -20,12 +21,12 @@ $font-stack:  'Josefin Sans', sans-serif;
 }
 
 
-// body {
-//   font-family: $font-stack;
-//   background: #333 url(images/film-bg.jpg) no-repeat top left fixed;
-//   background-size: cover;
-//   margin: 0;
-// }
+body {
+  font-family: $font-stack;
+  background-color: #BEBEBE;
+  background-size: cover;
+  margin: 0;
+}
 
 nav {
   box-shadow: 0 5px 8px rgba(30,30,30,0.8);
@@ -39,14 +40,15 @@ nav {
   width: 170px;
   height: 300px;
   float: right;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px;
   color: white;
-  h4 {
-    margin: 0;
-    padding-top: 50px;
-  }
+}
+
+h4, p {
+  margin: 10px;
+}
+
+h4 {
+  border-bottom: 2px solid #BEBEBE;
 }
 
 // .watched-btn,
@@ -58,23 +60,23 @@ nav {
 
 
 #pinWrapper {
-  position: relative;
-  border: 2px solid black;
+bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    position: relative;
+    max-width: 100%;
   .pinsimage {
-    max-width: 15%;
-    max-height:25%;
+    max-width: 100%;
+    height: 50%;
+    border-radius: 10px;
   }
 }
 
 #pinPositioner {
-  margin-top: 55px;
-}
-
-#find-results span {
-  margin-left: 20px;
-  font-size: 1.5em;
-  font-weight: bold;
-  vertical-align: center;
+  margin-top: 60px;
 }
 
 .hidden {
@@ -88,9 +90,9 @@ nav {
   left: 0;
   border: none;
   margin: 0;
-  padding: 5px;
+  padding: 0;
   background-color: rgba(0,0,0,0.5);
-  border-radius: 0 0 0 5px;
+  border-radius: 50px;
   .pinit:hover {
     display: show;
   }
@@ -100,3 +102,18 @@ nav {
     padding: 0;
   }
 }
+
+.glyphicon-plus {
+  background-color: #ffffff;
+  border-radius: 100px;
+  left: 100px;
+  padding: 15px;
+}
+
+// h1 {
+//   float: center;
+//   text-align: center;
+//   z-index: 0;
+//   top: 15px;
+
+// }
