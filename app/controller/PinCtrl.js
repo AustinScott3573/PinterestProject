@@ -7,7 +7,16 @@ app.controller("PinCtrl",
   function($scope,  $routeParams, $firebaseArray, $location, storage) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins"); 
 
-    var newPin = {};
+    var newPin = {
+      board: "",
+      image: "",
+      text: {
+        description: "",
+        title: ""
+      },
+      uid: "",
+      url: ""
+    };
 
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
@@ -15,7 +24,12 @@ app.controller("PinCtrl",
     //sets the newPin object to the pin object that was clicked
     $scope.getPin = function(key){
       console.log(key);
-      newPin=key;
+      newPin.board = key.board;
+      newPin.image = key.image;
+      newPin.text.description = key.text.description;
+      newPin.text.title = key.text.title;
+      newPin.uid = key.uid;
+      newPin.url = key.url;
       console.log(newPin);
     };
 
@@ -36,6 +50,20 @@ app.controller("PinCtrl",
 
       $scope.pins.$add(newPin);
       console.log($scope.pins);
+
+
+      // angular.element("#commentInput").text() = "";
+      // angular.element("#titleInput").text() = "";
+      newPin = {
+        board: "",
+        image: "",
+        text: {
+          description: "",
+          title: ""
+        },
+        uid: "",
+        url: ""
+      };
     });
     
     //displays the pin button on mouseover
