@@ -8,14 +8,14 @@ app.controller("PinCtrl",
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins"); 
 
     var newPin = {
-      board: "",
-      image: "",
+      board: null,
+      image: null,
       text: {
-        description: "",
-        title: ""
+        description: null,
+        title: null
       },
-      uid: "",
-      url: ""
+      uid: null,
+      url: null
     };
 
     // Data from firebase 
@@ -44,6 +44,7 @@ app.controller("PinCtrl",
       newPin.text.title = title;
       //sets the uid of newPin to the userId stored in the factory
       newPin.uid = storage.getUserId();
+      newPin.board = "";
 
       console.log(text, title);
       console.log(newPin);
@@ -54,16 +55,16 @@ app.controller("PinCtrl",
 
       // angular.element("#commentInput").text() = "";
       // angular.element("#titleInput").text() = "";
-      newPin = {
-        board: "",
-        image: "",
-        text: {
-          description: "",
-          title: ""
-        },
-        uid: "",
-        url: ""
-      };
+      // newPin = {
+      //   board: null,
+      //   image: null,
+      //   text: {
+      //     description: null,
+      //     title: null
+      //   },
+      //   uid: null,
+      //   url: null
+      // };
     });
     
     //displays the pin button on mouseover
