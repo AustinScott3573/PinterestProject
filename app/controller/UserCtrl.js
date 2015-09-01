@@ -9,4 +9,16 @@ app.controller("UserCtrl", [ "$scope", "$firebaseArray", "storage", function($sc
   $scope.uid = storage.getUserId();
 
   console.log(storage.getUserId());
+
+
+
+  angular.element(document).on("click", ".unpin", function(){
+    var id = angular.element(this).parent().parent()[0].id;
+    angular.forEach($scope.pins, function(value, key) {
+      if(value.text.title===id){
+        console.log($scope.pins[key]);
+        $scope.pins.$remove($scope.pins[key]);
+      }
+    });
+  });
 }]);

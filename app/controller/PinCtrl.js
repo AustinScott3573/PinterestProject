@@ -60,6 +60,8 @@ app.controller("PinCtrl",
       angular.element(this).find(".pinit").css("display", "none");
     });
 
+    
+
 
     $(document).ready(function(){
       $('#createPins').popover({
