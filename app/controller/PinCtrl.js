@@ -12,26 +12,14 @@ app.controller("PinCtrl",
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
     
+    //sets the newPin object to the pin object that was clicked
     $scope.getPin = function(key){
       console.log(key);
-      // var id = angular.element(this).parent().parent()[0].id;
-      // console.log(id);
-      // console.log($scope.pins);
-
-      // angular.forEach($scope.pins, function(value, key) {
-      //   if(value.text.title===id){
-
-      //     //save the matching value to pin
-      //     newPin = value;
-      //     console.log(newPin);
-      //   }
-      // });
-      
       newPin=key;
       console.log(newPin);
     };
 
-
+    //modifies the newPin object for the user who pinned it
     angular.element("#savePinButton").on("click", function(){
       //retrieves the inputs for the 2 text fields
       var text = angular.element("#commentInput").val();
@@ -46,9 +34,7 @@ app.controller("PinCtrl",
       console.log(text, title);
       console.log(newPin);
 
-      // $scope.pins.push(newPin);
       $scope.pins.$add(newPin);
-      // newPin = {};
       console.log($scope.pins);
     });
     

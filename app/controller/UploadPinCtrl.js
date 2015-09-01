@@ -27,7 +27,7 @@ app.controller("UploadPinCtrl", ["$scope", "$q", "$firebaseArray", "$location", 
         console.log(link);
         $scope.newPin.image = link;
         $("#newImage").html("<img src=" + link + "><br><br>");
-      }
+      };
       xhr.setRequestHeader('Authorization', 'Client-ID 4ff4d561a18ac75');
       xhr.send(fd);
       $('#myModal3')
