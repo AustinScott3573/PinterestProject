@@ -24,10 +24,6 @@ app.controller("PinCtrl",
           newPin = value;
           console.log(newPin);
         }
-        //on another button click (final pin button in the modal)
-          //take the text input from modal
-          //and change the description to match the new text
-          //then push the new pin object to the user's array
       });
     });
 
