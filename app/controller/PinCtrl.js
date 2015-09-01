@@ -12,20 +12,24 @@ app.controller("PinCtrl",
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
     
-    angular.element(document).on("click", ".pinit", function(){
-      var id = angular.element(this).parent().parent()[0].id;
-      console.log(id);
-      console.log($scope.pins);
+    $scope.getPin = function(key){
+      console.log(key);
+      // var id = angular.element(this).parent().parent()[0].id;
+      // console.log(id);
+      // console.log($scope.pins);
 
-      angular.forEach($scope.pins, function(value, key) {
-        if(value.text.title===id){
+      // angular.forEach($scope.pins, function(value, key) {
+      //   if(value.text.title===id){
 
-          //save the matching value to pin
-          newPin = value;
-          console.log(newPin);
-        }
-      });
-    });
+      //     //save the matching value to pin
+      //     newPin = value;
+      //     console.log(newPin);
+      //   }
+      // });
+      
+      newPin=key;
+      console.log(newPin);
+    };
 
 
     angular.element("#savePinButton").on("click", function(){
