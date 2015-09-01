@@ -6,7 +6,7 @@ app.controller("PinCtrl",
    "storage",
   function($scope,  $routeParams, $firebaseArray, $location, storage) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins"); 
-    var newPin = {};  
+    var newPin = {};
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
     angular.element(document).on("click", ".pinit", function(){
@@ -45,6 +45,18 @@ app.controller("PinCtrl",
       $scope.pins.$add(newPin);
       newPin = {};
       console.log($scope.pins);
+    });
+
+    angular.element(document).on("mouseover", ".hideAndShow",  function(){
+      console.log("on");
+      angular.element(this).find(".pinit").show();
+      // angular.element(this).find(".pinit").css("visibilty", "visible");
+    });
+
+    angular.element(document).on("mouseout",  ".hideAndShow", function(){
+      console.log("off");
+      angular.element(this).find(".pinit").hide();
+      // angular.element(this).find(".pinit").css("visiblity", "hidden");
     });
 
 
