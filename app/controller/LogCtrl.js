@@ -19,11 +19,11 @@ app.controller("LogCtrl",
     // Authenticates user to firebase data
     $scope.auth = $firebaseAuth(ref);
 
-    console.log("$scope.auth", $scope.auth);
+    // console.log("$scope.auth", $scope.auth);
 
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
-      console.log("authData", authData);
+      // console.log("authData", authData);
       //changes the profile picture based on how user is logged in
       
       if(authData!==null){
@@ -52,7 +52,7 @@ app.controller("LogCtrl",
         $scope.currentPicURL = "";
       }
       $scope.authData = authData;
-      console.log($scope.authData = authData);
+      // console.log($scope.authData = authData);
     });
     
     // Authorizes user by email/password
@@ -62,9 +62,9 @@ app.controller("LogCtrl",
           console.log("LogCtrl", authData);
           if (error) {
             $location.path('#/');
-            console.log("Login Failed!", error);
+            // console.log("Login Failed!", error);
           } else {
-            console.log("Authenticated successfully with payload:", authData);
+            // console.log("Authenticated successfully with payload:", authData);
           }
         });
     };
