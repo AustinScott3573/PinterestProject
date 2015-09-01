@@ -37,9 +37,9 @@
             </form>
             <div ng-show="authData">
               <a href="#/user">
-                <h5 class="loginStyling"><strong>{{authData.password.email}}{{ authData.facebook.cachedUserProfile.first_name }} {{ authData.twitter.displayName }} {{ authData.github.displayName }} {{ authData.google.displayName }}</strong></h5>
+                <h5 class="loginStyling"><strong>{{authData.password.email}}{{ authData.facebook.cachedUserProfile.first_name }} {{ authData.twitter.displayName }} {{ authData.github.displayName }} {{ authData.google.displayName }}</strong></a></h5>
                 <img id="profileImage" ng-src="{{currentPicURL}}">
-              </a>
+              
               </br>
               <a href="#/" class="btn btn-default btn-xs" ng-click="auth.$unauth()">Logout</a>
               <!-- <h1 class="appName">PinApple</h1> -->
@@ -101,7 +101,9 @@
 <script src="lib/bower_components/firebase/firebase.js"></script>
 <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="lib/node_modules/image-resolver/dist/ImageResolver.0.5.4.js"></script>
+<script src="https://raw.githubusercontent.com/rnmp/salvattore/master/dist/salvattore.min.js"></script>
 <script src="app/app.js"></script>
+
 <script src="app/controller/PinCtrl.js"></script>
 <script src="app/controller/CreatePinCtrl.js"></script>
 <script src="app/controller/UploadPinCtrl.js"></script>
