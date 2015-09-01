@@ -5,7 +5,7 @@
     <div ng-show="authData.uid" id="{{key.text.title}}" class="pins col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="key in pins | filter: authData.uid">
       <div id="pinWrapper">
         <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
-        <button ng-click="deletePin(key)" class="unpin">deletePin</button>
+        <button ng-click="deletePin(key)" class="unpin"><img class="redpineapple" src="images/pineapple3.png" width="40px"></button>
         <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
           <h4 class="pinsTitle">{{key.text.title}}</h4>
         </a>

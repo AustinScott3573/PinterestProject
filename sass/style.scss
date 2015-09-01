@@ -134,3 +134,25 @@ bottom: 0;
   text-align: center;
   float: center;
 }
+
+.unpin {
+
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  border: none;
+  margin: 0;
+  padding: 5px;
+  color: red;
+  border-radius: 0 0 0 5px;
+  &:hover {
+    background-color: rgba(0,0,0,0.9);
+    color: red;
+}
+}
+
+.redpineapple {
+   background-color: rgba(0,0,0,5);
+   border-radius: 50px;
+}
