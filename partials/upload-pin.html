@@ -1,3 +1,4 @@
+<br><br><br><br><br><br>
 <!-- MODAL: Prompt user to input URL -->
 <div id="myModal3" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -14,4 +15,29 @@
       </div>
     </div>
   </div>
-</div> <!-- CLOSE: Modal -->
+  </div> <!-- CLOSE: Modal -->
+  <!-- BODY: Display URL and image selected for new pin and prompt user for title and description -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6">
+        <h3>Uploading a new pin:</h3>
+        <div id="newImage"></div>
+        <form>
+          <div class="form-group">
+            <label for="url">URL:</label>
+            <input type="text" id="url" class="form-control" placeholder="http://..." ng-model="newPin.url">
+          </div>
+          <div class="form-group">
+            <label for="textTitle">Title:</label>
+            <input type="text" id="textTitle" class="form-control" placeholder="Pin Title" ng-model="newPin.text.title">
+          </div>
+          <div class="form-group">
+            <label for="textDescription">Description:</label>
+            <input type="text" id="textDescription" class="form-control" placeholder="Description" ng-model="newPin.text.description">
+          </div>
+          <button type="button" class="btn btn-default" ng-click="addPin()">Create</button>
+          <button type="button" class="btn btn-default" ng-click="closeAddPin()">Close</button>
+        </form>
+      </div>
+    </div>
+    </div> <!-- CLOSE: Body -->

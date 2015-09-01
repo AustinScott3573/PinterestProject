@@ -12,31 +12,20 @@ app.controller("PinCtrl",
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
     
-    angular.element(document).on("click", ".pinit", function(){
-      var id = angular.element(this).parent().parent()[0].id;
-      console.log(id);
-      console.log($scope.pins);
+    //sets the newPin object to the pin object that was clicked
+    $scope.getPin = function(key){
+      console.log(key);
+      newPin=key;
+      console.log(newPin);
+    };
 
-      angular.forEach($scope.pins, function(value, key) {
-        if(value.text.title===id){
-
-          //save the matching value to pin
-          newPin = value;
-          console.log(newPin);
-        }
-        //on another button click (final pin button in the modal)
-          //take the text input from modal
-          //and change the description to match the new text
-          //then push the new pin object to the user's array
-      });
-    });
-
-
+    //modifies the newPin object for the user who pinned it
     angular.element("#savePinButton").on("click", function(){
       //retrieves the inputs for the 2 text fields
       var text = angular.element("#commentInput").val();
       var title = angular.element("#titleInput").val();
       //sets the newPin to the values of the text fields
+      console.log(newPin);
       newPin.text.description = text;
       newPin.text.title = title;
       //sets the uid of newPin to the userId stored in the factory
@@ -45,23 +34,20 @@ app.controller("PinCtrl",
       console.log(text, title);
       console.log(newPin);
 
-      // $scope.pins.push(newPin);
       $scope.pins.$add(newPin);
-      newPin = {};
       console.log($scope.pins);
     });
-
+    
+    //displays the pin button on mouseover
     angular.element(document).on("mouseover", ".hideAndShow",  function(){
-      console.log("on");
-      angular.element(this).find(".pinit").show();
-      // angular.element(this).find(".pinit").css("visibilty", "visible");
+      angular.element(this).find(".pinit").css("display", "inline");
+    });
+    //hides the pin button on mouseout
+    angular.element(document).on("mouseout",  ".hideAndShow", function(){
+      angular.element(this).find(".pinit").css("display", "none");
     });
 
-    angular.element(document).on("mouseout",  ".hideAndShow", function(){
-      console.log("off");
-      angular.element(this).find(".pinit").hide();
-      // angular.element(this).find(".pinit").css("visiblity", "hidden");
-    });
+    
 
 
     $(document).ready(function(){

@@ -57,6 +57,9 @@ nav {
   margin: 0 !important;
   padding: 0 !important; }
 
+.pinit {
+  display: none; }
+
 body {
   font-family: "Josefin Sans", sans-serif;
   background-color: #BEBEBE;
