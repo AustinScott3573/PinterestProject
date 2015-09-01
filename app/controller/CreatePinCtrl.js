@@ -12,6 +12,8 @@ app.controller("CreatePinCtrl", ["$scope", "$q", "$firebaseArray", "$location", 
       }
     };
     // Display modal on page load
+    $('#createPins')
+      .popover('hide');
     $('#myModal2')
       .modal('show');
 
