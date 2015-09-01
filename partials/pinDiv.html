@@ -2,7 +2,8 @@
   <div class="row">
     <div ng-show="authData" id="{{key.text.title}}" class="pins col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="key in pins | filter: search">
       <div id="pinWrapper" class="hideAndShow">
-        <button ng-hide="hideAndShow" class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
+        <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
+        <button class="unpin">deletePin</button>
         <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
           <h4 class="pinsTitle">{{key.text.title}}</h4>
         </a>
