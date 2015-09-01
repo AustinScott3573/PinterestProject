@@ -4,7 +4,8 @@ $button-on-hover: #669999;
 nav {
   width: 100%;
   height: 10%;
-  min-height: 50px;
+  max-height: 25px;
+
   // text-align: center;
   // display: inline-block;
 } h5 {
@@ -47,3 +48,19 @@ left: 65px;
 .loginStyling {
 margin-left: 50px;
 }
+
+.pinApple {
+  float: center;
+  text-align: center;
+  position: absolute;
+  // z-index: 50rem;
+  right: 65rem;
+  bottom: -20px;
+}
+.pineappleimg {
+  position: relative;
+  z-index: 5em;
+  top: -10px;
+  
+  }
+

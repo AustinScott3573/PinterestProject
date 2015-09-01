@@ -64,19 +64,21 @@ bottom: 0;
     left: 0;
     right: 0;
     top: 0;
-    background-color: #D3D3D3;
+    background-color: #ffffff;
     border-radius: 10px;
     position: relative;
     max-width: 100%;
+    box-shadow: 10px 10px 5px #888888;
+
   .pinsimage {
     max-width: 100%;
-    height: 50%;
+    // height: 35%;
     border-radius: 10px;
   }
 }
 
 #pinPositioner {
-  margin-top: 60px;
+  margin-top: 75px;
 }
 
 .hidden {
@@ -103,12 +105,12 @@ bottom: 0;
   }
 }
 
-// .glyphicon-plus {
-//   background-color: #ffffff;
-//   border-radius: 100px;
-//   left: 100px;
-//   padding: 15px;
-// }
+.glyphicon-plus {
+  // background-color: #ffffff;
+  // border-radius: 100px;
+  // bottom: 5em;
+  // padding: 15px;
+}
 
 // h1 {
 //   float: center;
