@@ -37,6 +37,7 @@ app.controller("PinCtrl",
       var text = angular.element("#commentInput").val();
       var title = angular.element("#titleInput").val();
       //sets the newPin to the values of the text fields
+      console.log(newPin);
       newPin.text.description = text;
       newPin.text.title = title;
       //sets the uid of newPin to the userId stored in the factory
@@ -47,7 +48,7 @@ app.controller("PinCtrl",
 
       // $scope.pins.push(newPin);
       $scope.pins.$add(newPin);
-      newPin = {};
+      // newPin = {};
       console.log($scope.pins);
     });
     
