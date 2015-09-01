@@ -50,17 +50,14 @@ app.controller("PinCtrl",
       newPin = {};
       console.log($scope.pins);
     });
-
+    
+    //displays the pin button on mouseover
     angular.element(document).on("mouseover", ".hideAndShow",  function(){
-      console.log("on");
-      angular.element(this).find(".pinit").show();
-      // angular.element(this).find(".pinit").css("visibilty", "visible");
+      angular.element(this).find(".pinit").css("display", "inline");
     });
-
+    //hides the pin button on mouseout
     angular.element(document).on("mouseout",  ".hideAndShow", function(){
-      console.log("off");
-      angular.element(this).find(".pinit").hide();
-      // angular.element(this).find(".pinit").css("visiblity", "hidden");
+      angular.element(this).find(".pinit").css("display", "none");
     });
 
 
