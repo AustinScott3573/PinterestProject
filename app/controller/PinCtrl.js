@@ -6,9 +6,12 @@ app.controller("PinCtrl",
    "storage",
   function($scope,  $routeParams, $firebaseArray, $location, storage) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins"); 
+
     var newPin = {};
+
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
+    
     angular.element(document).on("click", ".pinit", function(){
       var id = angular.element(this).parent().parent()[0].id;
       console.log(id);
@@ -16,6 +19,7 @@ app.controller("PinCtrl",
 
       angular.forEach($scope.pins, function(value, key) {
         if(value.text.title===id){
+
           //save the matching value to pin
           newPin = value;
           console.log(newPin);

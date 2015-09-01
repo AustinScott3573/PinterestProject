@@ -23,6 +23,7 @@ app.controller("LogCtrl",
     
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
+      
       console.log("authData", authData);
 
       //changes the profile picture based on how user is logged in
@@ -53,7 +54,7 @@ app.controller("LogCtrl",
         $scope.currentPicURL = "";
       }
       $scope.authData = authData;
-      console.log($scope.authData = authData);
+      // console.log($scope.authData = authData);
     });
     
     // Authorizes user by email/password
@@ -63,10 +64,12 @@ app.controller("LogCtrl",
           console.log("LogCtrl", authData.uid);
           if (error) {
             $location.path('#/');
-            console.log("Login Failed!", error);
+            // console.log("Login Failed!", error);
           } else {
+
             storage.setUserId(authData.uid);
             console.log("Authenticated successfully with payload:", authData);
+
           }
         });
     };
