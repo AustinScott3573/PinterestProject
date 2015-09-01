@@ -12,12 +12,15 @@ app.controller("UserCtrl", [ "$scope", "$firebaseArray", "storage", function($sc
 
 
 
-  angular.element(document).on("click", ".unpin", function(){
-    var id = angular.element(this).parent().parent()[0].id;
-    angular.forEach($scope.pins, function(value, key) {
-      if(value.text.title===id){
-        $scope.pins.$remove($scope.pins[key]);
-      }
-    });
-  });
+  // angular.element(document).on("click", ".unpin", function(){
+  //   var id = angular.element(this).parent().parent()[0].id;
+  //   angular.forEach($scope.pins, function(value, key) {
+  //     if(value.text.title===id){
+  //       $scope.pins.$remove($scope.pins[key]);
+  //     }
+  //   });
+  // });
+  $scope.deletePin = function(key){
+    $scope.pins.$remove(key);
+  };
 }]);
