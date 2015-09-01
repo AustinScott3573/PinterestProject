@@ -26,6 +26,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-right" role="search">
+              <a tabindex="0" role="button" class="btn close img-circle" id="createPins" data-toggle="popover" data-trigger="focus" placement="left" html=true data-content='<a href="#" class="btn btn-block btn-sm btn-default"><span class="glyphicon glyphicon-arrow-up"></span> Upload a pin</a><a href="#/createpin/#myModal2" data-target="#myModal2" class="btn btn-block btn-sm btn-default"><span class="glyphicon glyphicon-globe"></span> Pin from website</a>'>
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
               <div class="form-group">
                 <button ng-modal="myPins" ng-click="" type="button" class="btn btn-default" id="userPins">Your Pins</button>
                 <input ng-model="search.text.title" id="search-input" type="text" class="form-control" placeholder="Search">
@@ -88,11 +91,13 @@
 <script src="lib/bower_components/angular-route/angular-route.js"></script>
 <script src="lib/bower_components/firebase/firebase.js"></script>
 <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+<script src="lib/node_modules/image-resolver/dist/ImageResolver.0.5.4.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controller/PinCtrl.js"></script>
 <script src="app/controller/CreatePinCtrl.js"></script>
 <script src="app/controller/LogCtrl.js"></script>
 <script src="app/controller/SignUpCtrl.js"></script>
 <script src="app/factories/storage.js"></script>
+<script src="app/factories/create-pin-storage.js"></script>
 </body>
 </html>
