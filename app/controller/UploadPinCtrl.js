@@ -15,32 +15,52 @@ app.controller("UploadPinCtrl", ["$scope", "$q", "$firebaseArray", "$location", 
     $('#myModal3')
       .modal('show');
 
-      $scope.uploadNewPin = function() {
-        console.log($scope.newPin);
-        var test = document.getElementById("uploadimage").value;
-        var selectedFile = document.getElementById('uploadimage').files[0];
-        console.log(selectedFile);
-        console.log(localStorage.dataBase64);
-        var gUrl = "https://api.imgur.com/3/image";
-        var mUrl = "https://api.imgur.com/3/account/sqfisher/";
-        $.ajax({
-          url: gUrl,
-          type: 'POST',
-          headers: {
-            Authorization: 'Client-ID 4ff4d561a18ac75',
-            Accept: 'application/json'
-          },
-          data: {
-            image: selectedFile,
-            type: 'base64'
-          },
-        success: function(result) {
-          var id = result.data.id;
-          console.log(result);
-          // window.location = 'https://imgur.com/gallery/' + id;
-        }
-      });
+    $scope.uploadNewPin = function() {
+      var link;
+      var selectedFile = document.getElementById('uploadimage').files[0];
+      var fd = new FormData(); 
+      fd.append("image", selectedFile);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://api.imgur.com/3/image.json");
+      xhr.onload = function() {   
+        link = JSON.parse(xhr.responseText).data.link;
+        console.log(link);
+        $scope.newPin.image = link;
+        $("#newImage").html("<img src=" + link + "><br><br>");
+      };
+      xhr.setRequestHeader('Authorization', 'Client-ID 4ff4d561a18ac75');
+      xhr.send(fd);
+      $('#myModal3')
+            .modal('hide');
     };
 
+    $scope.addPin = function() {
+      $scope.pins.$add(
+        $scope.newPin
+      );
+      $scope.newPin = {
+        "uid": "",
+        "url": "",
+        "image": "",
+        "text": {
+          "title": "",
+          "description": ""
+        }
+      };
+      $location.url('/pins');
+    };
+
+    $scope.closeAddPin = function() {
+      $scope.newPin = {
+        "uid": "",
+        "url": "",
+        "image": "",
+        "text": {
+          "title": "",
+          "description": ""
+        }
+      };
+      $location.url('/pins');
+    };
   }
 ]);

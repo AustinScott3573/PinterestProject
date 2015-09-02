@@ -23,14 +23,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/create-pin.html',
         controller: 'CreatePinCtrl'
       }).
-      when('/user/boards', {
-        templateUrl: 'partials/boards.html',
-        controller: 'BoardCtrl'
+      when('/uploadpin', {
+        templateUrl: 'partials/upload-pin.html',
+        controller: 'UploadPinCtrl'
       }).
-      // when('/uploadpin', {
-      //   templateUrl: 'partials/upload-pin.html',
-      //   controller: 'UploadPinCtrl'
-      // }).
       // .when('/photo/:id', {
       //   templateUrl: 'partials/detail.html',
       //   controller: 'DetailCtrl'

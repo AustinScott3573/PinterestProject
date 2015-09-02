@@ -1,9 +1,40 @@
-</br>
-<div ng-controller="UserCtrl" class="container" id="pinPositioner">
+<br>
+<div>
+  <div class="userProfileHeader">
+    <div class="imageBoard">
+      <img id="userImage" ng-src="{{currentPicURL}}">
+      <h2>{{authData.password.email}}{{ authData.facebook.cachedUserProfile.first_name }} {{ authData.twitter.displayName }} {{ authData.github.displayName }} {{ authData.google.displayName }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="grid row">
+  <div class="col-xs-4" id="boardDisplay">
+    
+  </div>
+  
+  <div id="boardDisplay" class="container col-xs-4" ng-repeat="key in pins | filter: authData.uid | filter: authData.key.url">
+  <h4>{{key.text.title}}</h4>
+    <div class="lgImgWrapper"> 
+      <img class="lgImg" ng-src="{{key.image}}">
+    </div>
+    <ul class="boardThumbs row">
+      <li><img class="smImg" ng-src="{{key.image}}"></li>
+      <li><img class="smImg" ng-src="{{key.image}}"></li>
+      <li><img class="smImg" ng-src="{{key.image}}"></li>
+    </ul>   
+  </div>
+
+  <div id="boardDisplay" class="col-xs-4">
+    
+  </div>
+
+</div>
+<!-- <div class="container" id="pinPositioner">
   <div class="row">
     <div ng-show="authData.uid" id="{{key.text.title}}" class="pins col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="key in pins | filter: authData.uid">
       <div id="pinWrapper">
-        <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
+        <button ng-click="deletePin(key)" class="unpin">deletePin</button>
         <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
           <h4 class="pinsTitle">{{key.text.title}}</h4>
         </a>
@@ -11,4 +42,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
