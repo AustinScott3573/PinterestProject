@@ -1,10 +1,12 @@
-</br>
 <div class="container" id="pinPositioner">
   <div class="row">
-    <div>
-      <div>
-        <input type="text" class="form-control" ng-model="boardTitle.board">
-        <a ng-click="addBoard()" class="btn btn-default btn-xs">Add Board</a>
+    <div ng-show="authData.uid" id="{{key.text.title}}" class="pins col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="key in pins | filter: authData.uid">
+      <div id="pinWrapper">
+        <button ng-click="deletePin(key)" class="unpin">deletePin</button>
+        <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
+          <h4 class="pinsTitle">{{key.text.title}}</h4>
+        </a>
+        <p class="pinsDescription">{{key.text.description}}</p>
       </div>
     </div>
   </div>
