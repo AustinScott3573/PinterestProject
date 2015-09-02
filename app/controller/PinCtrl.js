@@ -7,64 +7,56 @@ app.controller("PinCtrl",
   function($scope,  $routeParams, $firebaseArray, $location, storage) {
     var ref = new Firebase("https://pinterest-nss.firebaseio.com/pins"); 
 
-    var newPin = {
-      board: null,
-      image: null,
-      text: {
-        description: null,
-        title: null
-      },
-      uid: null,
-      url: null
-    };
-
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
+
+    //this will fix my repeat bug
+    var bugFixer = false;
+    //this is the data we want to keep from the old pin
+    var keyBoard = "";
+    var keyUrl = "";
+    var keyImage = "";
+
     
     //sets the newPin object to the pin object that was clicked
     $scope.getPin = function(key){
       console.log(key);
-      newPin.board = key.board;
-      newPin.image = key.image;
-      newPin.text.description = key.text.description;
-      newPin.text.title = key.text.title;
-      newPin.uid = key.uid;
-      newPin.url = key.url;
-      console.log(newPin);
+      //this prevents board getting added when it doesn't exist
+      if(key.board!==undefined){
+        keyBoard = key.board;
+      }else{
+        keyBoard = "";
+      }
+      //keep the url and the image
+      keyUrl = key.url;
+      keyImage = key.image;
+      //adjust bug fixer for next click
+      bugFixer = true;
     };
 
-    //modifies the newPin object for the user who pinned it
     angular.element("#savePinButton").on("click", function(){
-      //retrieves the inputs for the 2 text fields
-      var text = angular.element("#commentInput").val();
-      var title = angular.element("#titleInput").val();
-      //sets the newPin to the values of the text fields
-      console.log(newPin);
-      newPin.text.description = text;
-      newPin.text.title = title;
-      //sets the uid of newPin to the userId stored in the factory
-      newPin.uid = storage.getUserId();
-      newPin.board = "";
+      if(bugFixer){
+      //the code inside this will only run once per click
 
-      console.log(text, title);
-      console.log(newPin);
 
+      var newPin = {
+        board: keyBoard,
+        image: keyImage,
+        text: {
+          description: angular.element("#commentInput").val(),
+          title: angular.element("#titleInput").val()
+        },
+        uid: storage.getUserId(),
+        url: keyUrl
+      };
+      console.log(newPin);
       $scope.pins.$add(newPin);
       console.log($scope.pins);
-
-
-      // angular.element("#commentInput").text() = "";
-      // angular.element("#titleInput").text() = "";
-      // newPin = {
-      //   board: null,
-      //   image: null,
-      //   text: {
-      //     description: null,
-      //     title: null
-      //   },
-      //   uid: null,
-      //   url: null
-      // };
+      bugFixer=false;
+      //////////
+      }else{
+        console.log("This rebelious button click function tried to run multiple times, but I stopped it.");
+      }
     });
     
     //displays the pin button on mouseover
