@@ -1,4 +1,4 @@
-var app = angular.module("PinApp",[ 'ngRoute', 'firebase']);
+var app = angular.module("PinApp",[ 'ngRoute', 'firebase', "angular.filter"]);
 
 app.config(['$routeProvider',
   function($routeProvider) {
@@ -16,8 +16,8 @@ app.config(['$routeProvider',
         controller: 'PinCtrl'
       })
       .when('/user', {
-        templateUrl: 'partials/user.html',
-        controller: 'UserCtrl'
+        templateUrl: 'partials/boards.html',
+        controller: 'BoardsCtrl'
       }).
       when('/createpin', {
         templateUrl: 'partials/create-pin.html',
@@ -31,6 +31,10 @@ app.config(['$routeProvider',
       //   templateUrl: 'partials/detail.html',
       //   controller: 'DetailCtrl'
       // })
+      when('/boards', {
+        templateUrl: 'partials/boards.html',
+        controller: 'BoardsCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

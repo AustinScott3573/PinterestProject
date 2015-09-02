@@ -1,0 +1,45 @@
+<!-- <br><br><br>
+<div class="container" id="pinPositioner">
+  <div class="row">
+    <div ng-show="authData.uid" id="{{key.text.title}}" class="pins col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="key in userPins | filter: {board: theBoardList.board}">
+      <div id="pinWrapper">
+        <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
+        <button ng-click="deletePin(key)" class="unpin"><img class="redpineapple" src="images/pineapple3.png" width="40px"></button>
+        <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
+          <h4 class="pinsTitle">{{key.text.title}}</h4>
+        </a>
+        <p class="pinsDescription">{{key.text.description}}</p>
+      </div>
+    </div>
+  </div>
+  <select id="albumFilter" class="form-control"
+          ng-model="theBoardList"
+          ng-options="key.board for key in userPins | unique: 'board' | orderBy: 'board'">
+          <option selected disabled>Options</option>
+        </select>
+</div> -->
+
+
+
+<br><br><br>
+<div class="container" id="pinPositioner">
+  <div class="row">
+    <select id="theBoardList" class="form-control"
+          ng-model="theBoardList"
+          ng-options="key.text.title group by key.board for key in userPins | orderBy: 'board'">
+          <option selected disabled>Options</option>
+        </select>
+  </div>
+  <div class="row">
+    <div ng-show="authData.uid" id="{{key.text.title}}" class="pins col-xs-6 col-sm-4 col-md-3 col-lg-3" ng-repeat="key in pins | filter: authData.uid | filter: theBoardList.image">
+      <div id="pinWrapper">
+        <button class="pinit" type="button" data-toggle="modal" data-target="#myModal"><img src="http://successfulbusinessonline.org/wp-content/uploads/2015/07/pinterest_pin-it_icon.png" width="40px"></button>
+        <button ng-click="deletePin(key)" class="unpin"><img class="redpineapple" src="images/pineapple3.png" width="40px"></button>
+        <a href="{{key.url}}"><img class="pinsImage" ng-src="{{key.image}}">
+          <h4 class="pinsTitle">{{key.text.title}}</h4>
+        </a>
+        <p class="pinsDescription">{{key.text.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
