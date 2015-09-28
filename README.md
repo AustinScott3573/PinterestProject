@@ -1,5 +1,5 @@
 # PinterestProject
-This app is designed to replicate the social media site Pinterest. It was built as a group project two months after the start of cohort 10 at Nasvhille Software School. Built in angularjs
+This app is designed to replicate the social media site Pinterest. It was built as a group project two months after the start of cohort 10 at Nashville Software School. Built in angularjs
 
 #Usage
 Follow these instructions:
